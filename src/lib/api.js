@@ -1,10 +1,15 @@
 import axios from "axios";
 
-export const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+export const API = import.meta.env.VITE_API_URL || "";
+const instance = axios.create({
+  baseURL: API, // "" -> dùng /api khi dev + proxy
+  withCredentials: true, // nếu có cookie session
+    headers: {
+    "Content-Type": "application/json",
+  },
 
-const api = axios.create({
-  baseURL: API,
-  withCredentials: true,
+
+
 });
 
 api.interceptors.request.use((config) => {
