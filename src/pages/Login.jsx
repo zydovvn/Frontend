@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "@/context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import { Mail, Lock, Loader2 } from "lucide-react";
+import api from "@/lib/api";
 
 export default function Login() {
   const { login } = useContext(AuthContext);
